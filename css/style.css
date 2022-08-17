@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #f2f0f2;
+}
+
+.row {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    position: relative;
+}
+
+.info {
+    position: absolute;
+    left: 50%;
+    color: #333;
+    background-color: #fff;
+    padding: 20px 30px 5px;
+    width: calc(100% - 50px);
+    bottom: -90px;
+    transition: 0.5s ease-in-out;
+    z-index: 5;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.socialIcons {
+    display: flex;
+    position: relative;
+    transition: 0.5s ease-in-out;
+    z-index: 1;
+    justify-content: space-between;
+    width: max-content;
+    margin: 0 auto;
+    border-top: 1px solid #eaeaea;
+    margin-top: 10px;
+}
+
+.socialIcons a {
+    color: #333;
+    padding: 12px 10px;
+    border-top: 1px solid #ffffff15;
+    transition: 0.5s ease-in-out;
+}
+
+.card img {
+    width: 100%;
+    transition: 0.5s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background: #1e7cff70;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    transition: 0.3s ease-in-out;
+    transition-delay: 0.3s;
+}
+
+.card:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background: #1e7cff70;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    transition: 0.3s ease-in-out;
+}
+
+.card:hover:before {
+    width: 100%;
+    right: auto;
+    transition: 0.3s ease-in-out;
+}
+
+.card:hover:after {
+    height: calc(100% - 4px);
+    right: auto;
+    transition: 0.3s ease-in-out;
+    transition-delay: 0.3s;
+}
+
+.socialIcons:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #1e7cff;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover .socialIcons:after {
+    width: 100%;
+    transition: 0.5s ease-in-out;
+    right: auto;
+}
+
+.card:hover .info {
+    transition: 0.5s ease-in-out;
+    bottom: -65px;
+    opacity: 1;
+    pointer-events: all;
+}
